@@ -41,7 +41,7 @@ u = \begin{bmatrix}
 T_{fl} = T_{dfl}-T_{bfl}\\
 T_{fr} = T_{dfr}-T_{bfr}\\
 T_{rl} = T_{drl}-T_{brl}\\
-T_{rl} = T_{drl}-T_{brl}\\
+T_{rr} = T_{drr}-T_{brr}\\
 \end{bmatrix}\in{R^{9}}
 $$
 
