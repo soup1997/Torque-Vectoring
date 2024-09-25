@@ -19,7 +19,7 @@ ylabel('Md[Nm]', 'FontSize', 20);
 xlim([0,30])
 
 set(gca, 'FontSize', 15); % Set font size for axis tick labels
-set(gcf, 'Position', [100, 100, 1000, 400]);
+set(gcf, 'Position', [100, 100, 1000, 500]);
 % Add legend
 legend('Md','FontSize', 15);
 saveas(figure(1), 'C:\Users\jm538\Desktop\Code\TV_IITP\Paper\Figures\Md.tiff');
@@ -36,24 +36,25 @@ r_No = sinus_No.data.Data;
 
 % plot
 figure
-plot(time,r_des);
+plot(time,r_des,"LineWidth", 1);
 
 hold on
 
-plot(time,r_TV)
+plot(time,r_TV,"LineWidth", 1)
 
 hold on
 
-plot(time_No,r_No)
+plot(time_No,r_No,"LineWidth", 1)
 xlim([0,30])
 fontSize = 18;
 legendFontSize = 12;
+set(gca,'FontSize',15)
 xlabel('Time (s)', 'FontSize', fontSize);
 ylabel('yaw rate (rad/s)', 'FontSize', fontSize);
-legend('yaw rate_{desired}', 'yaw rate_{with TV}','yaw rate_{without TV}', 'FontSize', legendFontSize);
-set(gcf, 'Position', [100, 100, 1000, 400]);
+legend('{\gamma}_{desired}', '{\gamma}_{with TV}','{\gamma}_{without TV}', 'FontSize', legendFontSize);
+set(gcf, 'Position', [100, 100, 1000, 500]);
 
-saveas(figure(1), 'C:\Users\jm538\Desktop\Code\TV_IITP\Paper\Figures\yaw_rate_sinus.tiff');
+
 
 
 
@@ -71,24 +72,42 @@ r_No = steady_No.data{1}.Values.Data;
 
 % plot
 figure
-plot(time_No,r_des_No);
+plot(time_No,r_des_No,"LineWidth", 1);
 
 hold on
-plot(time,r_TV)
+plot(time,r_TV,"LineWidth", 1)
 hold on
-plot(time_No,r_No)
+plot(time_No,r_No,"LineWidth", 1)
 
 fontSize = 18;
 legendFontSize = 12;
 
-
+set(gca,'FontSize',15)
 xlabel('Time (s)', 'FontSize', fontSize);
 ylabel('yaw rate (rad/s)', 'FontSize', fontSize);
-legend('yaw rate_{desired}', 'yaw rate_{with TV}', 'yaw rate_{with TV}', 'FontSize', legendFontSize);
-set(gcf, 'Position', [100, 100, 1000, 400]);
+legend('{\gamma}_{desired}', '{\gamma}_{with TV}', '{\gamma}_{without TV}', 'FontSize', legendFontSize);
+set(gcf, 'Position', [100, 100, 1000, 500]);
+
 xlim([0,30])
 
+figure
+plot(time_No,r_des_No,"LineWidth", 1);
 
+hold on
+plot(time,r_TV,"LineWidth", 1)
+hold on
+plot(time_No,r_No,"LineWidth", 1)
+
+fontSize = 18;
+legendFontSize = 12;
+
+set(gca,'FontSize',15)
+xlabel('Time (s)', 'FontSize', fontSize);
+ylabel('yaw rate (rad/s)', 'FontSize', fontSize);
+legend('{\gamma}_{desired}', '{\gamma}_{with TV}', '{\gamma}_{without TV}', 'FontSize', legendFontSize);
+set(gcf, 'Position', [100, 100, 1000, 500]);
+
+xlim([10,30])
 
 
 
